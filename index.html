@@ -31,7 +31,7 @@
 
     require(["vs/editor/editor.main"], async function () {
       const url = new URL(window.location.href);
-      const markupText = await (await fetch(`/api/v1/translate?source=${url.searchParams.get('source')}`)).text();
+      const markupText = await (await fetch(`https://bricks-xlator.albertodicagno.com/api/v1/translate?source=${url.searchParams.get('source')}`)).text();
 
       monaco.editor.create(document.querySelector('.monaco-editor-container'), {
         value: markupText,
